@@ -1,0 +1,14 @@
+name: "웹프로그래밍 실습 CI/CD"
+
+on: 
+    push:
+        branches:
+              - main
+        tags:
+              - release.*
+
+jobs:
+    Job-Got-Deul:
+        runs-on: ubuntu-latest
+        steps:
+              - echo "어쩌고저쩌고 ... ${{ github.repository }}"

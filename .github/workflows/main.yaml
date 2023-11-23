@@ -3,20 +3,20 @@ name: "웹프로그래밍 실습 CI/CD"
 on: 
     push:
         branches:
-          - main
+            - main
         #tags:
          #     - release.*
 
 jobs:
     Job-Got-Deul:
         runs-on: ubuntu-latest
+        name: "NPM 시작"
         steps:
             - run: echo "어쩌고저쩌고 ... ${{ github.repository }}"
             - uses: actions/checkout@v4
-            - uses: actions/setup-node@v4
-            - with:
-                  node-version: 18
-            - name: "NPM 설치"
-                run: npm intall
-            - name: "NPM 실행"
-                run: npm run
+            - name: Setup
+              uses: actions/setup-node@v4
+              with:
+                node-version: 18
+            - run: npm intall
+            - run: npm run

@@ -18,5 +18,17 @@ jobs:
               uses: actions/setup-node@v4
               with:
                 node-version: 18
-            - run: npm intall
+            - run: npm install
             - run: npm run
+            #프론트엔드
+            # - run: npm run build
+            # index.js 기타 파일들이 github 컨테이너에 저장된 상태
+            # 빌드한 프론트엔드가 운영하는 서버에 저장되게 해야함
+            # 1. S3에 배포하고 있다 => github 컨테이너의 aws cli를 올려서
+            # 1-A. aws cli 에서 s3에 업데이트를 시켜야함
+            # 2. 개인 EC2 서버에 업데이트하고 있다. => ec2에 접속할 수 있는 SSH 환경 구축
+            # 2-A. github container ssh 접속하고, 명령어까지 실행을 바로 한다.
+            # 2-B. npm run build를 하고 난 다음에 scp(ssh 파일 복사)로 파일을 업데이트한다.
+
+            #백엔드
+            # 업데이트하는 과정을 명령어로 구성해서 처리해야함  (nodemon -> git pull)

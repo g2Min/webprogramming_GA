@@ -11,12 +11,12 @@ jobs:
     Job-Got-Deul:
         runs-on: ubuntu-latest
         steps:
-          - run: echo "어쩌고저쩌고 ... ${{ github.repository }}"
-          - uses: actions/checkout@v4
-          - uses: actions/setup-node@v4
-              with:
+            - run: echo "어쩌고저쩌고 ... ${{ github.repository }}"
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+            - with:
                   node-version: 18
-          - name: "NPM 설치"
-              run: npm intall
-          - name: "NPM 실행"
-              run: npm run
+            - name: "NPM 설치"
+                run: npm intall
+            - name: "NPM 실행"
+                run: npm run
